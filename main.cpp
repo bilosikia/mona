@@ -4,9 +4,11 @@
 #include "mona/base/log.h"
 #include "mona/base/block_queue.h"
 #include "mona/base/log_file.h"
-
+#include "mona/base/errno_str.h"
 
 int main() {
+    std::string errs = mona::errnoToStr(EINTR, "sb");
+
     mona::LogFile logFile("log", "main");
     mona::g_outFun = [&logFile](const std::string &buffer) -> void {
         logFile.append(buffer);

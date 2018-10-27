@@ -24,7 +24,7 @@ LogStream::LogStream(LogLevel level, SourceFile sourceFile, int lineNum, std::st
     TimeStamp timestamp;
     char buffer[1024] = {0};
     snprintf(buffer, sizeof(buffer), "%s.%s.%d.%s.%s: ", timestamp.toLocalTime(true).c_str(),
-             sourceFile.name().c_str(), lineNum, func.c_str(), logLevelStr(g_logLevel).c_str());
+             sourceFile.name().c_str(), lineNum, func.c_str(), logLevelStr(level).c_str());
     buffer_ = buffer;
 }
 

@@ -67,7 +67,6 @@ bool LogFile::createLogFile() {
 void LogFile::writeToFile() {
     while (true) {
         char *buffer = filledQueue_.front();
-        std::cout << "x\n";
         if (buffer == nullptr && stop_) {
             // 表示停止该线程
             break;
